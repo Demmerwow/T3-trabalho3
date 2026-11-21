@@ -1,0 +1,275 @@
+/* =========================================
+   RESET E VARIÁVEIS (Vibrant GTA 6)
+   ========================================= */
+:root {
+    --bg-color: #0a0a0f;
+    --card-bg: #16161a;
+    --neon-pink: #ff007f;
+    --neon-blue: #00f0ff;
+    --neon-purple: #9d00ff;
+    --text-main: #ffffff;
+    --text-muted: #a0a0b0;
+    --border-radius: 12px;
+}
+
+body.light-mode {
+    --bg-color: #f4f4f9;
+    --card-bg: #ffffff;
+    --text-main: #0a0a0f;
+    --text-muted: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    background-image: radial-gradient(circle at 10% 20%, rgba(157, 0, 255, 0.15) 0%, transparent 40%),
+                      radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.15) 0%, transparent 40%);
+    background-attachment: fixed;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* HEADER */
+.main-header {
+    text-align: center;
+    padding: 3rem 1rem 1rem 1rem;
+    position: relative;
+}
+
+.main-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+}
+
+.main-header h1 span {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+.btn-tema {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-tema:hover {
+    background: var(--neon-blue);
+    color: #000;
+}
+
+/* LAYOUT */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem 1rem;
+}
+
+/* FORMULÁRIO (CAPTURA RÁPIDA) */
+.form-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255,255,255,0.05);
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.captura-rapida {
+    display: flex;
+    gap: 10px;
+}
+
+.captura-rapida input {
+    flex: 1;
+    padding: 1rem;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid #333;
+    color: var(--text-main);
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+.captura-rapida input:focus {
+    outline: none;
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.btn-neon {
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink));
+    color: white;
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-neon:hover {
+    transform: scale(1.05);
+}
+
+/* DETALHES (APARECE AO CLICAR) */
+.detalhes-tarefa {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: slideDown 0.3s ease;
+}
+
+.detalhes-tarefa textarea, .detalhes-tarefa select, .detalhes-tarefa input[type="date"] {
+    padding: 0.8rem;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: var(--text-main);
+}
+
+.row-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+/* FILTROS E BUSCA */
+.controls-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filtros { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.btn-filtro {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid #333;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.btn-filtro:hover, .btn-filtro.active {
+    background: var(--neon-blue);
+    color: #000;
+    border-color: var(--neon-blue);
+}
+
+#input-busca {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: 1px solid #333;
+    background: var(--card-bg);
+    color: var(--text-main);
+}
+
+/* ESTATÍSTICAS */
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border-top: 3px solid var(--neon-pink);
+}
+
+.stat-card span { font-size: 1.8rem; font-weight: 900; color: var(--neon-pink); }
+.stat-card p { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; }
+
+/* LISTA DE TAREFAS */
+#lista-tarefas { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+
+.tarefa-item {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-left: 5px solid var(--neon-blue);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s, border-color 0.3s;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* Cores da borda baseadas na prioridade */
+.tarefa-item.prioridade-alta { border-left-color: var(--neon-pink); }
+.tarefa-item.prioridade-media { border-left-color: #ffd700; }
+.tarefa-item.prioridade-baixa { border-left-color: #22c55e; }
+
+.tarefa-item:hover { transform: translateX(5px); }
+
+.tarefa-item.concluida { opacity: 0.6; }
+.tarefa-item.concluida .tarefa-titulo { text-decoration: line-through; color: var(--text-muted); }
+
+.tarefa-info h3 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+.tarefa-info p { color: var(--text-muted); font-size: 0.9rem; }
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.tag {
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--neon-blue);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.tarefa-acoes { display: flex; gap: 0.5rem; }
+.btn-acao {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s, transform 0.2s;
+}
+.btn-acao:hover { transform: scale(1.2); }
+.btn-acao.concluir:hover { color: #22c55e; }
+.btn-acao.editar:hover { color: #ffd700; }
+.btn-acao.deletar:hover { color: var(--neon-pink); }
+
+/* ANIMAÇÕES */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 600px) {
+    .stats-section { grid-template-columns: 1fr; }
+    .controls-section { flex-direction: column; align-items: stretch; }
+    .main-header h1 { font-size: 2.5rem; }
+}
